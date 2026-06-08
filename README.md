@@ -2,7 +2,7 @@
 
 > **⚠️ STATUS: PENELITIAN / EKSPERIMEN**
 >
-> Repository ini adalah bagian dari penelitian tugas akhir (skripsi) dengan judul:
+> Repository ini adalah bagian dari penelitian matakuliah metode penelitian dengan judul:
 > *"Penerapan Containerization untuk Portabilitas Deployment: Studi Kasus REST API Sistem Manajemen Kos"*
 >
 > Tujuan dari eksperimen ini adalah membuktikan bahwa teknologi containerization (Docker) dapat membuat aplikasi dapat di-deploy secara portabel di berbagai lingkungan (Windows, Linux) tanpa modifikasi kode, hanya dengan mengandalkan environment variable.
