@@ -1,0 +1,60 @@
+services:
+  boardinghouse-api-db:
+    image: postgres:15-alpine
+    container_name: boardinghouse-api-db-1
+    environment:
+      POSTGRES_USER: ${DB_USER:?DB_USER is not set in .env}
+      POSTGRES_PASSWORD: ${DB_PASSWORD:?DB_PASSWORD is not set in .env}
+      POSTGRES_DB: ${DB_NAME:?DB_NAME is not set in .env}
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    networks:
+      - internal-net
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${DB_USER} -d ${DB_NAME}"]
+      interval: 3s
+      timeout: 3s
+      retries: 5
+      start_period: 10s
+
+  web-api:
+    image: ardentiena/boardinghouse-api:latest
+    container_name: boardinghouse-api-web-api
+    ports:
+      - "8080:8080"
+    environment:
+      DB_HOST: boardinghouse-api-db
+      DB_PORT: 5432
+      DB_USER: ${DB_USER:?DB_USER is not set in .env}
+      DB_PASSWORD: ${DB_PASSWORD:?DB_PASSWORD is not set in .env}
+      DB_NAME: ${DB_NAME:?DB_NAME is not set in .env}
+      JWT_SECRET: ${JWT_SECRET:?JWT_SECRET is not set in .env}
+      MIDTRANS_SERVER_KEY: ${MIDTRANS_SERVER_KEY:?MIDTRANS_SERVER_KEY is not set in .env}
+      MIDTRANS_CLIENT_KEY: ${MIDTRANS_CLIENT_KEY:?MIDTRANS_CLIENT_KEY is not set in .env}
+      CORS_ALLOWED_ORIGINS: ${CORS_ALLOWED_ORIGINS:?CORS_ALLOWED_ORIGINS is not set in .env}
+      ADMIN_USERNAME: ${ADMIN_USERNAME:?ADMIN_USERNAME is not set in .env}
+      ADMIN_PASSWORD: ${ADMIN_PASSWORD:?ADMIN_PASSWORD is not set in .env}
+    depends_on:
+      boardinghouse-api-db:
+        condition: service_healthy
+    networks:
+      - internal-net
+
+  nginx:
+    image: ardentiena/boardinghouse-nginx:latest
+    container_name: boardinghouse-nginx
+    ports:
+      - "${NGINX_PORT:-8000}:80"
+    depends_on:
+      - web-api
+    networks:
+      - internal-net
+
+networks:
+  internal-net:
+    driver: bridge
+
+volumes:
+  pgdata:
