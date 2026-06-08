@@ -101,7 +101,7 @@ docker-compose up -d
 # Cek status semua container
 docker-compose ps
 
-# Test health endpoint (8000 adalah default, bisa diganti di environment variable)
+# Test health endpoint (8000 adalah default, bisa diganti di .env)
 curl http://localhost:8000/health
 ```
 
@@ -389,7 +389,7 @@ docker ps -a | grep boardinghouse
 
 ## Lisensi
 
-Penelitian tugas akhir — Universitas Kristen Satya Wacana (UKSW)
+Tugas Metode Penelitian — Universitas Kristen Satya Wacana (UKSW)
 
 ---
 
