@@ -13,7 +13,7 @@
 > - Deployment memerlukan koneksi internet (untuk pull image)
 > - **Tidak perlu build source code** — langsung pull dan run
 > - Payment gateway menggunakan **Midtrans Sandbox** (testing, bukan produksi)
-
+---
 > **⚠️ STATUS: RESEARCH / EXPERIMENT**
 >
 > This repository is part of a research methods course project titled:
