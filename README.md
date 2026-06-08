@@ -400,6 +400,16 @@ docker ps -a | grep boardinghouse
 
 ---
 
+## Keterbatasan Eksperimen (Future Work)
+Eksperimen ini memiliki beberapa keterbatasan yang dapat/akan dikembangkan lebih lanjut:
+- *Role-Base Access Controll (RBAC)*: belum diimplementasikan
+- *Activation key untuk tenant*: belum diimplementasikan
+- *Spring Scheduler untuk pembuatan tagihan otomatis*: belum diimplementasikan
+- *Swagger UI untuk dokumentasi API*: belum diimplementasikan
+- *Midtrans Production Mode*: saat ini hanya menggunakan sandbox
+
+---
+
 ## Lisensi
 
 Tugas Metode Penelitian — Universitas Kristen Satya Wacana (UKSW)
@@ -411,3 +421,4 @@ Tugas Metode Penelitian — Universitas Kristen Satya Wacana (UKSW)
 - [Docker Documentation](https://docs.docker.com/)
 - [Spring Boot Documentation](https://spring.io/projects/spring-boot)
 - [Midtrans Documentation](https://docs.midtrans.com/)
+- [JWT Documentation](https://www.jwt.io/)
