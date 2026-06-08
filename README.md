@@ -125,7 +125,7 @@ curl -X POST http://localhost:8000/api/auth/login \
 
 > Sesuaikan nilai `username` dan `password` dengan nilai `ADMIN_USERNAME` dan `ADMIN_PASSWORD` di `.env`.
 
-**Response yang diharapkan:**
+**Response yang diharapkan (ini contoh):**
 
 ```json
 {"token":"iJIUzI1NiJ9.eyJzdWIiOiJhZG1..."}
@@ -134,7 +134,7 @@ curl -X POST http://localhost:8000/api/auth/login \
 ### 2. Mendapatkan Data Kamar
 
 ```bash
-# Simpan token ke variabel
+# Simpan token ke variabel (ini contoh)
 TOKEN="iJIUzI1NiJ9.eyJzdWIiOiJhZG1..."
 
 # Request ke endpoint rooms
