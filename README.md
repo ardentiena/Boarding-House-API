@@ -1,4 +1,4 @@
-# Boarding House Management System API - Deployment
+# Boarding House Management System API
 
 > **⚠️ STATUS: PENELITIAN / EKSPERIMEN**
 >
@@ -14,6 +14,19 @@
 > - **Tidak perlu build source code** — langsung pull dan run
 > - Payment gateway menggunakan **Midtrans Sandbox** (testing, bukan produksi)
 
+> **⚠️ STATUS: RESEARCH / EXPERIMENT**
+>
+> This repository is part of a research methods course project titled:
+> *"Implementing Containerization for Deployment Portability: A Case Study of a Boarding House Management System REST API"*
+>
+> The goal of this experiment is to demonstrate that containerization technology (Docker) can make applications deployable portably across different environments (Windows, Linux) without any code modifications, relying solely on environment variables.
+>
+> **Experiment characteristics:**
+> - Images have been pushed to Docker Hub
+> - Configuration is separated via a `.env` file
+> - Deployment requires an internet connection (to pull images)
+> - **No need to build source code** — just pull and run
+> - Payment gateway uses **Midtrans Sandbox** (testing only, not production)
 ---
 
 ## Daftar Isi
